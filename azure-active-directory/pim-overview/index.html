@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory/pim-overview/pic11.jpg">
 <meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory/pim-overview/pic13.jpg">
 <meta property="article:published_time" content="2021-06-14T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-16T13:49:45.923Z">
+<meta property="article:modified_time" content="2021-06-17T01:57:48.404Z">
 <meta property="article:author" content="Azure Identity Support Japan">
 <meta property="article:tag" content="Azure AD">
 <meta property="article:tag" content="Security">
@@ -117,7 +117,7 @@
         
         <a href="https://github.com/jpazureid/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+9a30b569-0752-5bf0-b06b-500e8a0ffbb2%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BPIM+%E3%81%AE%E6%B4%BB%E7%94%A8%E6%96%B9%E6%B3%95%5D%28https%3A%2F%2Fjpazureid.github.io%2Fblog%2Fazure-active-directory%2Fpim-overview%2F%29%0A*+Content+Source%3A+%5Barticles%2Fazure-active-directory%2Fpim-overview.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazureid%2Fblog%2Fblob%2Fmain%2Farticles%2Fazure-active-directory%2Fpim-overview.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazureid.github.io/blog/azure-active-directory/pim-overview/" data-id="ckpzj6yqa00ed0mmv6tmf6r38" class="article-share-link">共有</a>
+        <a data-url="https://jpazureid.github.io/blog/azure-active-directory/pim-overview/" data-id="ckq0978j600ed0ntcdyw4ddcn" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -179,30 +179,30 @@
 <p>・8 時間後には自動的にアクティブ化されたロールが無効化されます。</p>
 <p><img src="/blog/azure-active-directory/pim-overview/pic13.jpg"></p>
 <h1 id="よくある質問と回答"><a href="#よくある質問と回答" class="headerlink" title="よくある質問と回答"></a>よくある質問と回答</h1><blockquote>
-<p>PIM を利用するのにライセンスが必要ですか？</p>
+<p><em><strong>PIM を利用するのにライセンスが必要ですか？</strong></em></p>
 </blockquote>
 <p>はい。PIM を利用するためには、<a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/privileged-identity-management/subscription-requirements">Azure Active Directory P2 ライセンスが必要</a>です。<br>追加のコストは掛かりますが、上述の通り長期的な目線で見ればシステム管理者の負担の軽減やセキュリティリスクの最小化を実現することができますので、是非ご検討いただければと思います。</p>
 <blockquote>
-<p>PIM を利用しないと Azure を安全に利用できないということですか？</p>
+<p><em><strong>PIM を利用しないと Azure を安全に利用できないということですか？</strong></em></p>
 </blockquote>
 <p>いいえ。PIM はアカウントが乗っ取られた場合のセキュリティリスクを最小化する機能 (且つ運用負担を軽減する機能) ではありますが、アカウントの「認証」自体を強固にする機能ではありません。Azure では「認証」に多要素認証 (MFA) を用いていることでアカウント保護をより強固にすることが可能であり、Azure Active Direcotory では「セキュリティの既定値群」などを利用して既定の状態で強力なアカウント保護機能を提供しておりますので、PIM を利用しない場合も Azure Active Directory は強固なセキュリティ対策機能を保持しているとお考えいただいて問題ありません。</p>
 <p>*PIM のアクティブ化時に多要素認証 (MFA) 済トークンを必須とすることは可能ですが、多要素認証 (MFA) 済のセッションが端末ごと悪意あるユーザーに奪取された場合にはそのままアクティブ化を実行されてしまいますので、必ず「承認」のプロセスで水際対策することを推奨します。また、多要素認証 (MFA) といった認証の強度を構成する設定は別途「条件付きアクセス」といった認証・認可を専任で設定する機能に一元化することが適しています。</p>
 <p>*「最小権限の原則」については、PIM を利用しない状態でもシステム管理者が運用担当者と物理的に近くで働いており、最短時間でのアクセス権付与・ダブルチェック・アクセス権の削除を実施できるようであれば、いわば手動で「最小権限の原則」を実現することは可能です。しかし、これらの項目はシステム管理者の労力を多く伴うものであり、または運用ミスが発生する可能性もございますので、これらのタスクを自動化する PIM を是非ご活用いただければと存じます。</p>
 <blockquote>
-<p>ロール毎に承認者を設定することが出来ますか？</p>
+<p><em><strong>ロール毎に承認者を設定することが出来ますか？</strong></em></p>
 </blockquote>
 <p>「ユーザー管理者」などの Azure AD ロールは Azure AD テナント上で一意のロールとなるため、Azure AD ロール 1 つに対して承認者を決定します。</p>
 <p>(例 : 「ユーザー管理者」の承認者をリーダー A に設定し、「クラウドアプリケーション管理者」の承認者をリーダー B に設定します。)</p>
 <p>一方で Azure AD リソースのロール (「共同作成者」など) は管理グループ、サブスクリプション、リソースグループ、リソース毎に用意されており、それぞれに別の承認者を設定することが可能です。</p>
 <p>(例 : リソースグループ A の「共同作成者」の承認者をリーダー A に設定し、リソースグループ B の「共同作成者」の承認者をリーダー B に設定します。)</p>
 <blockquote>
-<p>最低限の権限が良いということは Azure リソース毎、且つ運用操作毎にロールを定義しておいたほうが良いのでしょうか？(例 : ”Restart Virtual Machine” というアクションのみを許可したカスタムロールを作成し VM1 のみに付与できるようにする、など)</p>
+<p><em><strong>最低限の権限が良いということは Azure リソース毎、且つ運用操作毎にロールを定義しておいたほうが良いのでしょうか？(例 : ”Restart Virtual Machine” というアクションのみを許可したカスタムロールを作成し VM1 のみに付与できるようにする、など)</strong></em></p>
 </blockquote>
 <p>極端なことを言えば記載された方法も考えられます。しかし、カスタムロールを作成するコストと、複数リソースの複数操作が必要になったときに複数のカスタムロール毎に「対象割り当て」「アクティブ化」「承認」を行う運用コストが、それによって得られるセキュリティメリットと釣り合わないものと思います。そのため、上記の例では最低限の作業対象をリソースグループとし、操作権限の纏まりはビルトインの「共同作成者」としています。</p>
 <p>*多くの会社では、チーム毎にリソースグループを用意し、そのリソースグループにチームが管理する対象の複数リソースを纏めていることから、リソースグループはロールの割り当て対象として最も適しているものと思います。</p>
 <p>*アクセス権にはアクセスレベル (読み取り、書き込みなど) とアクセス範囲 (A リソースと B リソース含むなど) という考え方があります。(縦軸と横軸のイメージです。) 「共同作成者」は最上位のアクセスレベルを保有しますが、アクセス範囲が 1 リソースグループに限定されていることからも、運用レベルに合った ”最低限のアクセス権” と定義することができるものと思います。</p>
 <blockquote>
-<p>PIM によるロールのアクティブ化は監査できますか？</p>
+<p><em><strong>PIM によるロールのアクティブ化は監査できますか？</strong></em></p>
 </blockquote>
 <p>はい、PIM を利用したロールのアクティブ化は Azure AD の監査ログに情報が記録されます。参考情報としてアクティブ化の承認が行われた時は <code>Add member to role approval requested (PIM activation)</code> が記録され、自動的にアクティブ化が無効化された場合は <code>Remove member from role (PIM activation expired)</code> が記録されます。システム変更日の後日に作業履歴を確認する場合は、Azure AD の監査ログでこれらのログをご確認いただければと思います。</p>
 <h1 id="終わりに"><a href="#終わりに" class="headerlink" title="終わりに"></a>終わりに</h1><p>いかがでしたでしょうか。PIM は Azure AD Premium P2 という追加のライセンスが必要になりますが、その分システム管理者が多くのメリットを教授できるものと思います。<br>本ブログが少しでもお役に立てれば幸甚ですので、是非 PIM の活用についてご検討ください。</p>
