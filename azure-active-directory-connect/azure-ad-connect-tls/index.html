@@ -17,9 +17,10 @@
 <meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory-connect/azure-ad-connect-tls/image02.png">
 <meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory-connect/azure-ad-connect-tls/image03.png">
 <meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory-connect/azure-ad-connect-tls/image04.png">
+<meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory-connect/azure-ad-connect-tls/image06.png">
 <meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory-connect/azure-ad-connect-tls/image05.png">
 <meta property="article:published_time" content="2021-04-23T01:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-17T01:57:48.036Z">
+<meta property="article:modified_time" content="2021-06-18T03:15:53.343Z">
 <meta property="article:author" content="Azure Identity Support Japan">
 <meta property="article:tag" content="Azure AD">
 <meta property="article:tag" content="Azure AD Connect">
@@ -110,7 +111,7 @@
         
         <a href="https://github.com/jpazureid/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+9180352a-54b0-55c0-aa8d-846d3e895e7b%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BAzure+AD+Connect+%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B+TLS+1.2+%E3%81%AE%E5%AF%BE%E5%BF%9C%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%5D%28https%3A%2F%2Fjpazureid.github.io%2Fblog%2Fazure-active-directory-connect%2Fazure-ad-connect-tls%2F%29%0A*+Content+Source%3A+%5Barticles%2Fazure-active-directory-connect%2Fazure-ad-connect-tls.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazureid%2Fblog%2Fblob%2Fmain%2Farticles%2Fazure-active-directory-connect%2Fazure-ad-connect-tls.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazureid.github.io/blog/azure-active-directory-connect/azure-ad-connect-tls/" data-id="ckq0978fy006s0ntcgcnd0466" class="article-share-link">共有</a>
+        <a data-url="https://jpazureid.github.io/blog/azure-active-directory-connect/azure-ad-connect-tls/" data-id="ckq1rfh13006s0nnyabp2eh22" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -145,7 +146,8 @@
 <p>以下のように Protocols 配下に TLS 1.2 に関する設定がなければ 、既定通り TLS 1.2 が有効であるため 、対応は不要です。</p>
 <p><img src="/blog/azure-active-directory-connect/azure-ad-connect-tls/image03.png"></p>
 <p>一方、以下のように TLS 1.2 のキーが存在し、かつ Enabled の値が 0 (無効) である場合には、OS レベルで TLS 1.2 が無効化されています。<br>キーを削除するか Enabled を 1 (有効) にする必要があります。</p>
-<p><img src="/blog/azure-active-directory-connect/azure-ad-connect-tls/image04.png"></p>
+<p>レジストリ:HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client<br><img src="/blog/azure-active-directory-connect/azure-ad-connect-tls/image04.png"></p>
+<p>もしくは<br>レジストリ:HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server<br><img src="/blog/azure-active-directory-connect/azure-ad-connect-tls/image06.png"></p>
 <h3 id="3-パススルー認証エージェントが-1-5-389-0-以上であることを確認する。"><a href="#3-パススルー認証エージェントが-1-5-389-0-以上であることを確認する。" class="headerlink" title="3. パススルー認証エージェントが 1.5.389.0 以上であることを確認する。"></a>3. パススルー認証エージェントが 1.5.389.0 以上であることを確認する。</h3><p>Azure AD Connect でサインイン方式としてパススルー認証が選択されており、Azure AD Connect サーバー以外にパススルー認証エージェントを別途インストールされている場合は、1.5.389.0 以降のエージェントがインストールされていることを確認ください。</p>
 <p>[コントロールパネル] - [プログラム] - [プログラムと機能] で ”Microsoft Azure AD Connect Authentication Agent” のバージョンを確認します。</p>
 <p><img src="/blog/azure-active-directory-connect/azure-ad-connect-tls/image05.png"></p>
