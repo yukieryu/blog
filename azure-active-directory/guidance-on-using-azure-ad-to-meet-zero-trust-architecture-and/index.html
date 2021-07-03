@@ -4,26 +4,21 @@
   <meta charset="utf-8">
   
   
-  <title>条件付きアクセスの 検索 / 並び替え/ 絞り込み 機能がパブリック プレビューとなりました ! | Japan Azure Identity Support Blog</title>
+  <title>Azure AD を使用して Zero Trust アーキテクチャと MFA の要件を満たすためのガイダンス | Japan Azure Identity Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本記事は、 2021 年 2 月 1 日に Azure Active Directory Identity Blog に公開された記事 (Search, Sort, and Filter for Conditional Access is now in public preview!) の抄訳です。原文は こちら より参照ください。  Azure ポータル上で Azure AD  条件付きアクセス">
+  <meta name="description" content="こんにちは、Azure Identity サポート チームの村上です。 本記事は、2021 年 6 月 23 日に米国の Azure Active Directory Identity Blog で公開された Guidance on using Azure AD to meet Zero Trust Architecture and MFA requirements を意訳したものになります。ご不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="条件付きアクセスの 検索 &#x2F; 並び替え&#x2F; 絞り込み 機能がパブリック プレビューとなりました !">
-<meta property="og:url" content="https://jpazureid.github.io/blog/azure-active-directory/search-sort-and-filter-for-ca/index.html">
+<meta property="og:title" content="Azure AD を使用して Zero Trust アーキテクチャと MFA の要件を満たすためのガイダンス">
+<meta property="og:url" content="https://jpazureid.github.io/blog/azure-active-directory/guidance-on-using-azure-ad-to-meet-zero-trust-architecture-and/index.html">
 <meta property="og:site_name" content="Japan Azure Identity Support Blog">
-<meta property="og:description" content="本記事は、 2021 年 2 月 1 日に Azure Active Directory Identity Blog に公開された記事 (Search, Sort, and Filter for Conditional Access is now in public preview!) の抄訳です。原文は こちら より参照ください。  Azure ポータル上で Azure AD  条件付きアクセス">
+<meta property="og:description" content="こんにちは、Azure Identity サポート チームの村上です。 本記事は、2021 年 6 月 23 日に米国の Azure Active Directory Identity Blog で公開された Guidance on using Azure AD to meet Zero Trust Architecture and MFA requirements を意訳したものになります。ご不">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory/search-sort-and-filter-for-ca/001.png">
-<meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory/search-sort-and-filter-for-ca/002.png">
-<meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory/search-sort-and-filter-for-ca/003.png">
-<meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory/search-sort-and-filter-for-ca/004.png">
-<meta property="article:published_time" content="2021-02-09T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-03T19:01:14.786Z">
+<meta property="article:published_time" content="2021-07-03T09:00:00.000Z">
+<meta property="article:modified_time" content="2021-07-03T19:01:14.674Z">
 <meta property="article:author" content="Azure Identity Support Japan">
 <meta property="article:tag" content="Azure AD">
-<meta property="article:tag" content="Conditional Access">
+<meta property="article:tag" content="US Identity Blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpazureid.github.io/blog/azure-active-directory/search-sort-and-filter-for-ca/001.png">
   
     <link rel="alternate" href="../../atom.xml" title="Japan Azure Identity Support Blog" type="application/atom+xml">
   
@@ -85,7 +80,7 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-azure-active-directory/search-sort-and-filter-for-ca" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-azure-active-directory/guidance-on-using-azure-ad-to-meet-zero-trust-architecture-and" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -94,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      条件付きアクセスの 検索 / 並び替え/ 絞り込み 機能がパブリック プレビューとなりました !
+      Azure AD を使用して Zero Trust アーキテクチャと MFA の要件を満たすためのガイダンス
     </h1>
   
 
@@ -102,41 +97,41 @@
       <div class="article-share">
         Last Update: 
         <a href="" class="article-date-single">
-  <time datetime="2021-02-09T15:00:00.000Z" itemprop="datePublished">2021-02-10</time>
+  <time datetime="2021-07-03T09:00:00.000Z" itemprop="datePublished">2021-07-03</time>
 </a>
         
         
-        <a href="https://github.com/jpazureid/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+22d0d0ca-fe32-59d7-b076-7e4da35b0c8f%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E6%9D%A1%E4%BB%B6%E4%BB%98%E3%81%8D%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%AE+%E6%A4%9C%E7%B4%A2+%2F+%E4%B8%A6%E3%81%B3%E6%9B%BF%E3%81%88%2F+%E7%B5%9E%E3%82%8A%E8%BE%BC%E3%81%BF+%E6%A9%9F%E8%83%BD%E3%81%8C%E3%83%91%E3%83%96%E3%83%AA%E3%83%83%E3%82%AF+%E3%83%97%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%81%A8%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F+%21%5D%28https%3A%2F%2Fjpazureid.github.io%2Fblog%2Fazure-active-directory%2Fsearch-sort-and-filter-for-ca%2F%29%0A*+Content+Source%3A+%5Barticles%2Fazure-active-directory%2Fsearch-sort-and-filter-for-ca.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazureid%2Fblog%2Fblob%2Fmain%2Farticles%2Fazure-active-directory%2Fsearch-sort-and-filter-for-ca.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
+        <a href="https://github.com/jpazureid/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+10f447b7-014a-55f1-860f-8d1f7cba900e%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5BAzure+AD+%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6+Zero+Trust+%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E3%81%A8+MFA+%E3%81%AE%E8%A6%81%E4%BB%B6%E3%82%92%E6%BA%80%E3%81%9F%E3%81%99%E3%81%9F%E3%82%81%E3%81%AE%E3%82%AC%E3%82%A4%E3%83%80%E3%83%B3%E3%82%B9%5D%28https%3A%2F%2Fjpazureid.github.io%2Fblog%2Fazure-active-directory%2Fguidance-on-using-azure-ad-to-meet-zero-trust-architecture-and%2F%29%0A*+Content+Source%3A+%5Barticles%2Fazure-active-directory%2Fguidance-on-using-azure-ad-to-meet-zero-trust-architecture-and.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazureid%2Fblog%2Fblob%2Fmain%2Farticles%2Fazure-active-directory%2Fguidance-on-using-azure-ad-to-meet-zero-trust-architecture-and.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazureid.github.io/blog/azure-active-directory/search-sort-and-filter-for-ca/" data-id="ckqo4sz6600590os32qlgaqat" class="article-share-link">共有</a>
+        <a data-url="https://jpazureid.github.io/blog/azure-active-directory/guidance-on-using-azure-ad-to-meet-zero-trust-architecture-and/" data-id="ckqo4sz5k003u0os3ejhp4in5" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本記事は、 2021 年 2 月 1 日に Azure Active Directory Identity Blog に公開された記事 (Search, Sort, and Filter for Conditional Access is now in public preview!) の抄訳です。原文は <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/azure-active-directory-identity/search-sort-and-filter-for-conditional-access-is-now-in-public/ba-p/1994699">こちら</a> より参照ください。</p>
+        <p>こんにちは、Azure Identity サポート チームの村上です。</p>
+<p>本記事は、2021 年 6 月 23 日に米国の Azure Active Directory Identity Blog で公開された <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/azure-active-directory-identity/guidance-on-using-azure-ad-to-meet-zero-trust-architecture-and/ba-p/1751676">Guidance on using Azure AD to meet Zero Trust Architecture and MFA requirements</a> を意訳したものになります。ご不明点等ございましたらサポート チームまでお問い合わせください。</p>
 <hr>
-<p>Azure ポータル上で Azure AD  条件付きアクセス ポリシーを検索、並び替え、絞り込みする機能がパブリック プレビューとなりました。これは Azure AD のフィードバック フォーラムで最もリクエストされていたものの 1 つであり、ポリシーの管理が一段と楽になります。この機能は 2021 年 2 月 1 日から全テナントに順次展開され、数週間後には全テナントで利用できるようになる予定です。</p>
-<br>
+<p>皆さん、こんにちは。</p>
+<p>最近発表された <a target="_blank" rel="noopener" href="https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/">国家のサイバー セキュリティ向上に関する大統領令</a> では、ゼロトラスト アーキテクチャと多要素認証が義務付けられていますが、これらの要件はどのようなもので、基準を満たすために Azure AD のツールをどのように使用すればよいのか気にされている方もいらっしゃると思います。</p>
+<p>我々の公開文書の中で、この新しいガイダンスを紹介できることを嬉しく思います。このガイダンスは、Azure Active Directory を使用して政府や業界の ID 要件を満たすためのものです。マイクロソフトは、 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/compliance/regulatory/offering-home">自社が</a> いかにこれら多くの標準を満たしているかをドキュメントにまとめて公開しています。貴社でもマイクロソフトがこれら標準に準拠していることを前提に、弊社サービスを活用いただくことができますが、マイクロソフトがいくらこれら標準へ準拠しているといっても、時に 「”共同責任” (貴社とマイクロソフトでともに標準への準拠に責任を負う)」の概念が生じる場合があります。この新しいガイダンスは、貴社が <strong>Azure Active Directory を使用して、これらの ID 要件を満たすことができる</strong> ように設計されたものです。また、Microsoft が連邦政府向けに作成した、クラウドと Zero Trust の刷新に関するガイド <a target="_blank" rel="noopener" href="https://cloudblogs.microsoft.com/industry-blog/microsoft-in-business/government/2021/06/24/mapping-the-cybersecurity-executive-order-milestones/">Mapping the Cybersecurity Executive Order Milestones</a> もご覧ください。 </p>
+<p>例として、FedRAMP High controls IA-2 (1-4) の要件を満たすことを考えてみましょう。これらの要件を理解するには、<a target="_blank" rel="noopener" href="https://www.fedramp.gov/assets/resources/documents/FedRAMP_Security_Controls_Baseline.xlsx">FedRAMP セキュリティ コントロール ベースライン</a> に始まり、<a target="_blank" rel="noopener" href="https://csrc.nist.gov/publications/detail/sp/800-53/rev-4/final">NIST SP 800-53 Rev.4</a> から、このベースとなっている <a target="_blank" rel="noopener" href="https://pages.nist.gov/800-63-3/sp800-63-3.html">NIST SP 800-63 Rev.3</a>、さらにこの基盤となる <a target="_blank" rel="noopener" href="https://csrc.nist.gov/publications/detail/fips/140/2/final">NIST FIPS 140-2</a> にまで踏み込まなければなりません。お分かりのとおり… とてつもない量の読解が必要です。他には、<a target="_blank" rel="noopener" href="https://aka.ms/AzureADStandards">スタンダードとコンプライアンスのセクション</a> を活用することもできます。このセクションでは、以下の方法でこの管理を満たすためのガイダンスを提供しています。</p>
+<ol>
+<li>MFA を必要とするように Conditional Access (CA) ポリシーを設定する。</li>
+<li>デバイス管理ポリシーと CA ポリシーを設定し、これらの管理対象デバイスへのサインインに MFA を必要とするようにする。    </li>
+<li>FedRAMP High で要求される <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/azure-active-directory-identity/10-reasons-to-love-passwordless-2-nist-compliance/ba-p/2115725">NIST 認証保証レベル</a> (AAL) 3 を満たす実行可能な MFA オプション。</li>
+<li>PIM を使用して、PIM のアクティブ化なしに特権的なローカル アクセスを行わないようにする。</li>
+</ol>
+<p><strong>新しい標準およびコンプライアンス分野に関し、まず 2 つのコンテンツを以下のとおり発表いたします:</strong></p>
+<p> <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/standards/nist-overview">NIST Authenticator Assurance Levels を満たすように Azure Active Directory を構成する</a> </p>
+<pre><code>まず、NIST 800-63 - Digital Identity Guidelines より取り掛かりました。NIST 800-63 は、他の多くの規格や規制が前提としているガイドラインで、デジタル アイデンティティのフレームワークとして認知されています。 
 
-<h2 id="検索-Search"><a href="#検索-Search" class="headerlink" title="検索 (Search)"></a>検索 (Search)</h2><p>条件付きアクセス ポリシーの一覧ページに検索バーが追加され、特定のポリシーをすばやく簡単に名前から見つけることができるようになりました。検索では、ポリシー名のリストに対して、「～から始まる (starts-with)」と部分文字列検索が自動的に実行されます。部分文字列検索は、全単語、部分単語に対して実行され、特殊文字のサポートが含まれています。検索は大文字小文字を区別しません。<br>例えば、「Devices」を検索すると、「Devices」をポリシー名に含む「compliant devices」と「managed devices」の両方のポリシーが検索結果として表示されます。</p>
-<p><img src="/blog/azure-active-directory/search-sort-and-filter-for-ca/001.png"></p>
-<br>
-
-<h2 id="並び替え-Sort"><a href="#並び替え-Sort" class="headerlink" title="並び替え (Sort)"></a>並び替え (Sort)</h2><p>ポリシーのリストを、ポリシー名、状態、作成日、および更新日で並べ替えることができます。各列の見出しの右側にある矢印を使用して、昇順または降順でリストを並べ替えることができます。</p>
-<p><img src="/blog/azure-active-directory/search-sort-and-filter-for-ca/002.png"></p>
-<br>
-
-<h2 id="絞り込み-Filter"><a href="#絞り込み-Filter" class="headerlink" title="絞り込み (Filter)"></a>絞り込み (Filter)</h2><p>検索やソートだけでなく、状態、作成時刻、変更時刻でポリシーリストを絞り込みすることもできます。</p>
-<p><img src="/blog/azure-active-directory/search-sort-and-filter-for-ca/003.png"></p>
-<br>
-
-<p>最後に、ポリシーの一覧ページでポリシー数を表示するように改善しました。これにより、設定したポリシーの総数を確認できるようになりました。また、検索または絞り込みを適用した場合、全ポリシー数のうちいくつのポリシーが該当したかを確認いただけます。</p>
-<p><img src="/blog/azure-active-directory/search-sort-and-filter-for-ca/004.png"></p>
-<br>
-
-<p>世界中で、過去 30 日間で 18,000 を超えるポリシーが作成されました。条件付きアクセスの検索、並び替え、絞り込み機能を活用し、多くのポリシーの中から目的のポリシーを見つけていただければ幸いです。</p>
-<p>これまでの数々のフィードバックを提供いただいたことに Azure  AD チームを代表してお礼申し上げます。Azure AD 条件付きアクセスの管理エクスペリエンスを弊社が改善できるよう引き続きフィードバックの共有にご協力いただけますと幸いです。</p>
-<p>いつものように、<a target="_blank" rel="noopener" href="https://feedback.azure.com/forums/169401-azure-active-directory">Azure フォーラム</a> や Twitter @AzureAD を通じて、この機能に関する質問やフィードバックを共有いただければと思います。</p>
+このガイダンスでは、Azure Active Directory を使用して NIST 認証保証レベル (AAL) を満たす方法を詳細に説明し、これらの AAL を利用可能なすべての認証方法に対応付けます。
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/standards/configure-azure-active-directory-for-fedramp-high-impact">FedRAMP High Impact Level を満たすための Azure Active Directory の構成</a> </p>
+<pre><code>米国の多くの連邦政府機関およびこれらの機関にクラウド サービスを提供するクラウド ソリューション プロバイダー (CSP) は、FedRAMP プログラムの要件を満たす必要があります。私たちは、FedRAMP High のベースラインに沿ってガイダンスを作成し、最も厳格な ID 管理もカバーできるようにしました。このアプローチにより、より低い FedRAMP ベースラインを遵守する必要のあるお客様にも、このガイダンスをご利用いただけます。
+</code></pre>
+<p>近々、米国政府機関では、多要素認証の完全導入が求められます。ゼロ トラスト アプローチの一環として明示的に認証情報を検証する必要が生じますので、貴社においても <a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/security/business/identity-access-management/mfa-multi-factor-authentication">MFA を有効にする</a> ためのリソースをご確認ください。</p>
+<p>お客様が Azure Active Directory を利用して実現したいアイデンティティ要件に関する規格、規制、その他のコンプライアンス フレームワークについて、皆様からのご意見をお待ちしております。今後も、標準、規制、その他のコンプライアンス フレームワークの内容を確認し、必要に応じてお客様が Azure Active Directory を使用してアイデンティティ要件を満たせるようなガイダンスを作成していきます。</p>
 
       
       
@@ -150,10 +145,10 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Azure-AD/" rel="tag">Azure AD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Conditional-Access/" rel="tag">Conditional Access</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Azure-AD/" rel="tag">Azure AD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/US-Identity-Blog/" rel="tag">US Identity Blog</a></li></ul>
 
         
-        <a href="https://github.com/jpazureid/blog/edit/main/articles/azure-active-directory/search-sort-and-filter-for-ca.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
+        <a href="https://github.com/jpazureid/blog/edit/main/articles/azure-active-directory/guidance-on-using-azure-ad-to-meet-zero-trust-architecture-and.md" class="article-github-edit-link" target="_blank" rel="noopener noreferrer">GitHub で編集</a>
         
     </footer>
   </div>
@@ -161,19 +156,10 @@
     
 <nav id="article-nav">
   
-    <a href="../../active-directory-federation-service/adfs-federation-metadata/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">次の記事</strong>
-      <div class="article-nav-title">
-        
-          AD FS 証明書利用者信頼 に登録している Office 365 のフェデレーション メタデータの更新が検知された場合の対処方法について
-        
-      </div>
-    </a>
   
-  
-    <a href="../azure-ad-b2c-fundamentals/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../have-you-updated-your-applications-to-use-the-microsoft/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前の記事</strong>
-      <div class="article-nav-title">Azure AD B2C のキホンとよくある質問</div>
+      <div class="article-nav-title">Microsoft Authentication Library と Microsoft Graph への移行は完了済みでしょうか？</div>
     </a>
   
 </nav>
@@ -192,7 +178,7 @@
       <ul>
         
           <li>
-            <a href="../guidance-on-using-azure-ad-to-meet-zero-trust-architecture-and/">Azure AD を使用して Zero Trust アーキテクチャと MFA の要件を満たすためのガイダンス</a>
+            <a href="">Azure AD を使用して Zero Trust アーキテクチャと MFA の要件を満たすためのガイダンス</a>
           </li>
         
           <li>
